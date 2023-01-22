@@ -132,7 +132,7 @@ The target flow temperature ("Vorlauftemperatur") of the heating system for the 
 | ---- | ------ | ---- | --------------- |
 | K    | 0.1    | int  | -32768 to 32767 |
 
-**Description**
+**Description**  
 Influences the target room temperature. Basis is the datapoint temp_heat. This datapoint sets the wanted target to +X or -Y relative to the basis of temp_heat. For example, temp_heat is set to 22 degree and remote_override is set to +2 the real target for the heating system is 24 degree.
 
 ### hk{$n}.mode_auto
@@ -151,7 +151,7 @@ The current mode of the heating circuit. 0: Off, 1: Auto, 2: Heating, 3: Setback
 **Description**  
 Defines the current active time program. Value 0 means "time program 1" and value 1 means "time program 2".
 
-### hk{$n}.temp_setback
+### hk{$n}.temp_setback  
 | Unit | Factor | Type | Range           |
 | ---- | ------ | ---- | --------------- |
 | °C   | 0.1    | int  | -32768 to 32767 |
@@ -176,8 +176,20 @@ The target temperature for the LED room thermostate. This temperature is the tar
 The target temperature while the heating system is in vacation mode. The vacation mode is set for a period of time on the touch (remote) control panel or through the app.
 
 ### hk{$n}.name
+| Unit | Factor | Type   | Range |
+| ---- | ------ | ------ | ----- |
+| None | None   | string | None  |
+
+**Description**  
+You can set or get the name for the heating circuit
 
 ### hk{$n}.oekomode
+| Unit | Factor | Type | Range                                     |
+| ---- | ------ | ---- | ----------------------------------------- |
+| num  | 1      | int  | 0:Off, 1:Comfort, 2:Minimum, 3:Ecological |
+
+**Description**  
+This setting has influence to the desired target temperature for the heating circuit. The system uses weather data to estimate if it get's warmer during daytime and adjusts the target temperatures accordingly. The setting itself expresses the influence of the weather to the heating circuit. If you set comfort here, then the heater respects the L_comfort setting. 
 
 ### pu{$n}.L_tpo_act
 
@@ -239,7 +251,7 @@ The actual state of the hot water system. The heater tells if it's currently all
 | ---- | ------ | ---- | --------------- |
 | number | 1    | int  | 0 to 1          |
 
-**Description**
+**Description**  
 Defines the current active time program. Value 0 means "time program 1" and value 1 means "time program 2".
 
 
