@@ -140,7 +140,7 @@ Influences the target room temperature. Basis is the datapoint temp_heat. This d
 | ---- | ------ | ---- | --------------- |
 | number | 1    | int  | 0 to 3          |
 
-**Description**
+**Description**  
 The current mode of the heating circuit. 0: Off, 1: Auto, 2: Heating, 3: Setback
 
 ### hk{$n}.time_prg
@@ -148,7 +148,7 @@ The current mode of the heating circuit. 0: Off, 1: Auto, 2: Heating, 3: Setback
 | ---- | ------ | ---- | --------------- |
 | number | 1    | int  | 0 to 1          |
 
-**Description**
+**Description**  
 Defines the current active time program. Value 0 means "time program 1" and value 1 means "time program 2".
 
 ### hk{$n}.temp_setback
@@ -156,7 +156,7 @@ Defines the current active time program. Value 0 means "time program 1" and valu
 | ---- | ------ | ---- | --------------- |
 | °C   | 0.1    | int  | -32768 to 32767 |
 
-**Description**
+**Description**  
 The current setback ("Absenktemperatur") temperature. Relevant if either the time program defines that current the setback time is active or if the circuit is set to mode 3.
 
 ### hk{$n}.temp_heat
@@ -164,7 +164,7 @@ The current setback ("Absenktemperatur") temperature. Relevant if either the tim
 | ---- | ------ | ---- | --------------- |
 | °C   | 0.1    | int  | -32768 to 32767 |
 
-**Description**
+**Description**  
 The target temperature for the LED room thermostate. This temperature is the target if the remote is set to "middle" position. Relevant for the data point remote_override
 
 ### hk{$n}.temp_vacation
@@ -172,7 +172,7 @@ The target temperature for the LED room thermostate. This temperature is the tar
 | ---- | ------ | ---- | --------------- |
 | °C   | 0.1    | int  | -32768 to 32767 |
 
-**Description**
+**Description**  
 The target temperature while the heating system is in vacation mode. The vacation mode is set for a period of time on the touch (remote) control panel or through the app.
 
 ### hk{$n}.name
@@ -208,7 +208,7 @@ The target temperature while the heating system is in vacation mode. The vacatio
 | ---- | ------ | ---- | --------------- |
 | °C   | 0.1    | int  | -32768 to 32767 |
 
-**Description**
+**Description**  
 The target temperature of the hot water boiler.
 
 ### ww{$n}.L_ontemp_act
@@ -220,12 +220,19 @@ The target temperature of the hot water boiler.
 | ---- | ------ | ---- | --------------- |
 | num  | 1      | int  | 0 or 1          |
 
-**Description**
+**Description**  
 Indicates if the pump for the water heater is currently running or not. 0 means off, 1 means on.
 
 ### ww{$n}.L_state
 
 ### ww{$n}.L_statetext
+
+| Unit | Factor | Type   | Range |
+| ---- | ------ | ------ | ----- |
+| n.a  | n.a    | string | n.a   |
+
+**Description**  
+The actual state of the hot water system. The heater tells if it's currently allowed to heat up water or not, and if/why water is heated or not. Also heat once is mentioned here. The whole string consists of all informations together and is seperated by a pipe (|) symbol.
 
 ### ww{$n}.time_prg
 | Unit | Factor | Type | Range           |
@@ -247,9 +254,9 @@ Defines the current active time program. Value 0 means "time program 1" and valu
 ### ww{$n}.heat_once
 | Unit | Factor | Type | Range           |
 | ---- | ------ | ---- | --------------- |
-| num  | 1      | int  | 0 or 1          |
+| None | None   | Bool | 0 or 1          |
 
-**Description**
+**Description**  
 If the time program normally would not allow the system to heat the water boiler, this value overrides the behaviour and allows the water to be heated once. This mode is set back after the hot water boiler reaching the target temperature.
 
 ### ww{$n}.temp_min_set
@@ -258,11 +265,39 @@ If the time program normally would not allow the system to heat the water boiler
 
 ### ww{$n}.name
 
+| Unit | Factor | Type   | Range |
+| ---- | ------ | ------ | ----- |
+| None | None   | string | None  |
+
+**Description**  
+You can set or get the name for the hot water circuit
+
 ### ww{$n}.smartstart
+
+| Unit    | Factor | Type | Range |
+| ------- | ------ | ---- | ----- |
+| minutes | 1      | int  | 0-90  |
+
+**Description**  
+Allowes the heater to start X minutes earlier in the morning if the water temperature is low enough and according to weather forecast there's no sun for solar water heating.
 
 ### ww{$n}.use_boiler_heat
 
+| Unit | Factor | Type | Range        |
+| ---- | ------ | ---- | ------------ |
+| num  | 1      | int  | 0:Off , 1:On |
+
+**Description**  
+When the heater goes to Off, setting this to 1 (On) will use the remaining heat in the system to (over-)heat the water boiler so the remaining thermal energy isn't wasted, instead it's stored in the warm water.
+
 ### ww{$n}.oekomode
+
+| Unit | Factor | Type | Range                                     |
+| ---- | ------ | ---- | ----------------------------------------- |
+| num  | 1      | int  | 0:Off, 1:Comfort, 2:Minimum, 3:Ecological |
+
+**Description**  
+Setting this influences when water will be allowed to be heated. The system takes the weather forecast into consideration. The range is from 0 (don't use the weather forecast at all) to 3 (strongly let the forecast influence the beginning of the start time). Using 3 means also during summer that the system locks the warm water at all if sun is expected around noon. This will be announced in the L_statetext with a message like "Sunny weather expected, warm water setpoint reduced".
 
 ### sk{$n}.L_koll_temp
 
