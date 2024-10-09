@@ -379,6 +379,46 @@ Setting this influences when water will be allowed to be heated. The system take
 
 ### pe{$n}.L_stb
 
+### pe{$n}.L_storage_fill
+
+| Unit    | Factor | Type | Range    |
+| ------- | ------ | ---- | -------- |
+|   kg    | 1      | int  | 0-32767  |
+
+**Description**  
+This parameter indicates the amount of pellets remaining in the local storage unit, measured in kilograms (kg). It provides a value in integer form with a range from 0 to 32767 kg.
+
+### pe{$n}.L_storage_hopper
+
+| Unit    | Factor | Type | Range          |
+| ------- | ------ | ---- | -------------- |
+|   kg    | 1      | int  | -327680-32767  |
+
+**Description**  
+This parameter indicates the amount of pellets remaining in the intermediate container "Zwischenbehälter", measured in kilograms (kg). It provides a value in integer form with a range from -32680 to 32767 kg.
+
+
+### pe{$n}.L_storage_max
+
+| Unit    | Factor | Type | Range        |
+| ------- | ------ | ---- | ------------ |
+|   kg    | 1      | int  | 150 - 30000  |
+
+**Description**  
+This parameter indicates the max amount of pellets in the local storage unit "Füllstand Lager", measured in kilograms (kg). It provides a value in integer form with a range from 150 to 30000 kg.
+
+
+### pe{$n}.L_storage_min
+
+| Unit    | Factor | Type | Range       |
+| ------- | ------ | ---- | ----------- |
+|   kg    | 1      | int  | 0 - 4000    |
+
+**Description**  
+This parameter indicates the min amount of pellets in the local storage unit "warnung bei" and can trigger a notification when storage is below defined value. It is measured in kilograms (kg). It provides a value in integer form with a range from 0 to 4000 kg.
+
+### pe{$n}.L_storage_popper
+
 ### pe{$n}.L_modulation
 
 ### pe{$n}.L_uw_speed
