@@ -481,16 +481,36 @@ This parameter indicates Modulationsstufe. (Did not observe any other value than
 
 | Unit    | Factor | Type    | Range                    |
 | ------- | ------ | ------- | ------------------------ |
-|  none   |  1     | string  | {16:Leistungsbrand, x:y} |
+|  none   |  1     | string  | {16:Leistungsbrand, 2147483648:Aus} |
 
 **Description**  
 This parameter indicates status of the burner (Kesselstatus)
 
 ### pe{$n}.L_statetext
+| Unit    | Factor | Type    | Range                    |
+| ------- | ------ | ------- | ------------------------ |
+|  none   |  1     | string  | {Leistungsbrand, Aus     |
+
+**Description**  
+This parameter indicates status of the burner as a descriptive text (Kesselstatus)
+
 
 ### pe{$n}.L_type
+| Unit    | Factor | Type    | Range                                                                                                                            |
+| ------- | ------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------|
+|  none   | none   | string  |  0:PE,1:PES,2:PEK,3:PESK,4:SMART V1,5:SMART V2,6:CONDENS,7:SMART XS,8:SMART V3,9:COMPACT,10:AIR,11:CONDENS XL,12:PELLEMATIC HOME |
+
+**Description**  
+This parameter indicates the bruner type (Kesseltyp) 
+
 
 ### pe{$n}.L_starts
+| Unit    | Factor | Type     | Range |
+| ------- | ------ | -------- | ------|
+|  none   |  none  | integer  | none  |
+
+**Description**  
+This parameter indicates the total number of starts
 
 ### pe{$n}.L_runtime
 
