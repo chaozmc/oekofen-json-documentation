@@ -377,6 +377,43 @@ Setting this influences when water will be allowed to be heated. The system take
 
 ### pe{$n}.L_not
 
+### pe{$n}.L_pellets_today
+
+| Unit    | Factor | Type | Range         |
+| ------- | ------ | ---- | ------------- |
+|   kg    | 1      | int  | -32768-32767  |
+
+**Description**  
+This parameter indicates the amount of pellets used today sofar, measured in kilograms (kg). "Pelletverbrauch heute"
+
+### pe{$n}.L_pellets_yesterday
+
+| Unit    | Factor | Type | Range         |
+| ------- | ------ | ---- | ------------- |
+|   kg    | 1      | int  | -32768-32767  |
+
+**Description**  
+This parameter indicates the amount of pellets used yesterday, measured in kilograms (kg). "Pelletverbrauch gestern"
+
+### pe{$n}.L_resttimeburner
+
+| Unit    | Factor | Type | Range         |
+| ------- | ------ | ---- | ------------- |
+|   zs    | 0.01   | int  | ?             |
+
+**Description**  
+? "Pausenzeit"
+
+### pe{$n}.L_runtimeburner
+
+| Unit    | Factor | Type | Range         |
+| ------- | ------ | ---- | ------------- |
+|   zs    | 0.01   | int  | ?             |
+
+**Description**  
+This parameter indicates the total time the burner was running. "Einschubzeit"
+
+
 ### pe{$n}.L_stb
 
 ### pe{$n}.L_storage_fill
@@ -419,7 +456,16 @@ This parameter indicates the min amount of pellets in the local storage unit "wa
 
 ### pe{$n}.L_storage_popper
 
+not supported in Version 4.04?
+
+
 ### pe{$n}.L_modulation
+| Unit    | Factor | Type | Range             |
+| ------- | ------ | ---- | ----------------- |
+|   %     | 1      | int  | -32768 - 32767    |
+
+**Description**  
+This parameter indicates Modulationsstufe. (Did not observe any other value than 1 or 0)
 
 ### pe{$n}.L_uw_speed
 
