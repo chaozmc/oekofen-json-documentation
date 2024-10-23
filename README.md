@@ -416,6 +416,14 @@ This parameter indicates the total time the burner was running. "Einschubzeit"
 
 ### pe{$n}.L_stb
 
+| Unit    | Factor | Type    | Range          |
+| ------- | ------ | ------- | -------------- |
+|  none   |  none  | string  | {0:Aus, 1:Ein} |
+
+**Description**  
+This parameter indicates stus of the "Safety Thermostat".
+
+
 ### pe{$n}.L_storage_fill
 
 | Unit    | Factor | Type | Range    |
@@ -470,6 +478,13 @@ This parameter indicates Modulationsstufe. (Did not observe any other value than
 ### pe{$n}.L_uw_speed
 
 ### pe{$n}.L_state
+
+| Unit    | Factor | Type    | Range                    |
+| ------- | ------ | ------- | ------------------------ |
+|  none   |  1     | string  | {16:Leistungsbrand, x:y} |
+
+**Description**  
+This parameter indicates status of the burner (Kesselstatus)
 
 ### pe{$n}.L_statetext
 
