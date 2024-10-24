@@ -513,13 +513,51 @@ This parameter indicates the bruner type (Kesseltyp)
 This parameter indicates the total number of starts
 
 ### pe{$n}.L_runtime
+| Unit    | Factor | Type     | Range |
+| ------- | ------ | -------- | ------|
+|  h      |  1     | integer  | none  |
+
+**Description**  
+This parameter indicates the total run time in hours. (Brennerlaufzeit)
 
 ### pe{$n}.L_avg_runtime
+| Unit    | Factor | Type     | Range          |
+| ------- | ------ | -------- | ---------------|
+|  min    |  1     | integer  | -32768 - 32767 |
+
+**Description**  
+This parameter indicates the average run time in minutes. (PE Mittlere Laufzeit)
 
 ### pe{$n}.L_uw_release
+| Unit    | Factor | Type     | Range          |
+| ------- | ------ | -------- | ---------------|
+|  °C     |  0.1   | integer  | -32768 - 32767 |
+
+**Description** 
+This parameter indicates the release temperature. (Freigabetemperatur)
 
 ### pe{$n}.L_uw
+| Unit    | Factor | Type     | Range          |
+| ------- | ------ | -------- | ---------------|
+|  %      |  1     | integer  | -32768 - 32767 |
+
+**Description**  
+This parameter indicates the speed uw. (Drehzahl UW)
 
 ### pe{$n}.mode
+| Unit    | Factor | Type     | Range                |
+| ------- | ------ | -------- | ---------------------|
+|  none   | none   | string   | 0:Aus, 1:Auto, 2:Ein |
+
+**Description**  
+This parameter indicates the operatingmode of the bruner "Betriebsart"
+
+### pe{$n}.suction_clean_time
+| Unit    | Factor | Type     | Range |
+| ------- | ------ | -------- | ------|
+|  h      | none   | string   | none  |
+
+**Description**  
+This parameter indicates at what time storage hopper will be filled and the system will be cleaned . (Reinigung / Befüllung)
 
 ### error
