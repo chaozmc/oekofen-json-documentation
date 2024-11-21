@@ -377,28 +377,187 @@ Setting this influences when water will be allowed to be heated. The system take
 
 ### pe{$n}.L_not
 
+### pe{$n}.L_pellets_today
+
+| Unit    | Factor | Type | Range         |
+| ------- | ------ | ---- | ------------- |
+|   kg    | 1      | int  | -32768-32767  |
+
+**Description**  
+This parameter indicates the amount of pellets used today sofar, measured in kilograms (kg). "Pelletverbrauch heute"
+
+### pe{$n}.L_pellets_yesterday
+
+| Unit    | Factor | Type | Range         |
+| ------- | ------ | ---- | ------------- |
+|   kg    | 1      | int  | -32768-32767  |
+
+**Description**  
+This parameter indicates the amount of pellets used yesterday, measured in kilograms (kg). "Pelletverbrauch gestern"
+
+### pe{$n}.L_resttimeburner
+
+| Unit    | Factor | Type | Range         |
+| ------- | ------ | ---- | ------------- |
+|   zs    | 0.01   | int  | ?             |
+
+**Description**  
+? "Pausenzeit"
+
+### pe{$n}.L_runtimeburner
+
+| Unit    | Factor | Type | Range         |
+| ------- | ------ | ---- | ------------- |
+|   zs    | 0.01   | int  | ?             |
+
+**Description**  
+This parameter indicates the total time the burner was running. "Einschubzeit"
+
+
 ### pe{$n}.L_stb
 
+| Unit    | Factor | Type    | Range          |
+| ------- | ------ | ------- | -------------- |
+|  none   |  none  | string  | {0:Aus, 1:Ein} |
+
+**Description**  
+This parameter indicates stus of the "Safety Thermostat".
+
+
+### pe{$n}.L_storage_fill
+
+| Unit    | Factor | Type | Range    |
+| ------- | ------ | ---- | -------- |
+|   kg    | 1      | int  | 0-32767  |
+
+**Description**  
+This parameter indicates the amount of pellets remaining in the local storage unit, measured in kilograms (kg). It provides a value in integer form with a range from 0 to 32767 kg.
+
+### pe{$n}.L_storage_hopper
+
+| Unit    | Factor | Type | Range          |
+| ------- | ------ | ---- | -------------- |
+|   kg    | 1      | int  | -327680-32767  |
+
+**Description**  
+This parameter indicates the amount of pellets remaining in the intermediate container "Zwischenbehälter", measured in kilograms (kg). It provides a value in integer form with a range from -32680 to 32767 kg.
+
+
+### pe{$n}.L_storage_max
+
+| Unit    | Factor | Type | Range        |
+| ------- | ------ | ---- | ------------ |
+|   kg    | 1      | int  | 150 - 30000  |
+
+**Description**  
+This parameter indicates the max amount of pellets in the local storage unit "Füllstand Lager", measured in kilograms (kg). It provides a value in integer form with a range from 150 to 30000 kg.
+
+
+### pe{$n}.L_storage_min
+
+| Unit    | Factor | Type | Range       |
+| ------- | ------ | ---- | ----------- |
+|   kg    | 1      | int  | 0 - 4000    |
+
+**Description**  
+This parameter indicates the min amount of pellets in the local storage unit "warnung bei" and can trigger a notification when storage is below defined value. It is measured in kilograms (kg). It provides a value in integer form with a range from 0 to 4000 kg.
+
+### pe{$n}.L_storage_popper
+
+not supported in Version 4.04?
+
+
 ### pe{$n}.L_modulation
+| Unit    | Factor | Type | Range             |
+| ------- | ------ | ---- | ----------------- |
+|   %     | 1      | int  | -32768 - 32767    |
+
+**Description**  
+This parameter indicates Modulationsstufe. (Did not observe any other value than 1 or 0)
 
 ### pe{$n}.L_uw_speed
 
 ### pe{$n}.L_state
 
+| Unit    | Factor | Type    | Range                    |
+| ------- | ------ | ------- | ------------------------ |
+|  none   |  1     | string  | {16:Leistungsbrand, 2147483648:Aus} |
+
+**Description**  
+This parameter indicates status of the burner (Kesselstatus)
+
 ### pe{$n}.L_statetext
+| Unit    | Factor | Type    | Range                    |
+| ------- | ------ | ------- | ------------------------ |
+|  none   |  1     | string  | {Leistungsbrand, Aus     |
+
+**Description**  
+This parameter indicates status of the burner as a descriptive text (Kesselstatus)
+
 
 ### pe{$n}.L_type
+| Unit    | Factor | Type    | Range                                                                                                                            |
+| ------- | ------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------|
+|  none   | none   | string  |  0:PE,1:PES,2:PEK,3:PESK,4:SMART V1,5:SMART V2,6:CONDENS,7:SMART XS,8:SMART V3,9:COMPACT,10:AIR,11:CONDENS XL,12:PELLEMATIC HOME |
+
+**Description**  
+This parameter indicates the bruner type (Kesseltyp) 
+
 
 ### pe{$n}.L_starts
+| Unit    | Factor | Type     | Range |
+| ------- | ------ | -------- | ------|
+|  none   |  none  | integer  | none  |
+
+**Description**  
+This parameter indicates the total number of starts
 
 ### pe{$n}.L_runtime
+| Unit    | Factor | Type     | Range |
+| ------- | ------ | -------- | ------|
+|  h      |  1     | integer  | none  |
+
+**Description**  
+This parameter indicates the total run time in hours. (Brennerlaufzeit)
 
 ### pe{$n}.L_avg_runtime
+| Unit    | Factor | Type     | Range          |
+| ------- | ------ | -------- | ---------------|
+|  min    |  1     | integer  | -32768 - 32767 |
+
+**Description**  
+This parameter indicates the average run time in minutes. (PE Mittlere Laufzeit)
 
 ### pe{$n}.L_uw_release
+| Unit    | Factor | Type     | Range          |
+| ------- | ------ | -------- | ---------------|
+|  °C     |  0.1   | integer  | -32768 - 32767 |
+
+**Description** 
+This parameter indicates the release temperature. (Freigabetemperatur)
 
 ### pe{$n}.L_uw
+| Unit    | Factor | Type     | Range          |
+| ------- | ------ | -------- | ---------------|
+|  %      |  1     | integer  | -32768 - 32767 |
+
+**Description**  
+This parameter indicates the speed uw. (Drehzahl UW)
 
 ### pe{$n}.mode
+| Unit    | Factor | Type     | Range                |
+| ------- | ------ | -------- | ---------------------|
+|  none   | none   | string   | 0:Aus, 1:Auto, 2:Ein |
+
+**Description**  
+This parameter indicates the operatingmode of the bruner "Betriebsart"
+
+### pe{$n}.suction_clean_time
+| Unit    | Factor | Type     | Range |
+| ------- | ------ | -------- | ------|
+|  h      | none   | string   | none  |
+
+**Description**  
+This parameter indicates at what time storage hopper will be filled and the system will be cleaned . (Reinigung / Befüllung)
 
 ### error
